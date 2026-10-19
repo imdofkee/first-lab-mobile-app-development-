@@ -1,0 +1,55 @@
+package com.dofkee.firstlabwork.ui.theme
+
+//import android.widget.EditText
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardOptions
+//import androidx.compose.material3.TextField
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import org.w3c.dom.Text
+
+@Composable
+
+fun TemplateText(modifier: Modifier) {
+    var text by remember { mutableStateOf("") }
+    val textShape = RoundedCornerShape(12.dp)
+
+
+    BasicTextField(
+        value = text,
+        onValueChange = {
+            // ToDO: прикрутить проверку на ввод цирф/фильтр ввода
+            // что такое it...
+            text = it},
+        modifier = modifier.fillMaxWidth().height(40.dp).background(BaseDisableColor, shape = textShape).border(width = 10.dp, color = BaseDisableColor, shape = textShape),
+        enabled = true,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+//        onKeyboardAction = KeyboardOptions {
+//            AfterDone = {
+//                Text("dlkdklfl")
+//            }
+//        },
+        cursorBrush = SolidColor(BaseTextColor),
+        singleLine = true,
+        textStyle = TextStyle(fontSize = 20.sp)
+
+    )
+}
