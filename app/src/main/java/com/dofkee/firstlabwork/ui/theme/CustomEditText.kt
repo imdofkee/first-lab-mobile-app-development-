@@ -24,11 +24,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-
 fun TemplateText(modifier: Modifier) {
     var text by remember { mutableStateOf("") }
     val textShape = RoundedCornerShape(12.dp)
-
 
     BasicTextField(
         value = text,
@@ -49,9 +47,6 @@ fun TemplateText(modifier: Modifier) {
         textStyle = TextStyle(fontSize = 20.sp, textAlign = TextAlign.Start),
         decorationBox = {innerPadding -> Column(
             modifier = Modifier.padding(5.dp, 0.dp),
-            verticalArrangement = Arrangement.Center,
-
-            ) {innerPadding()} }
-
+            verticalArrangement = Arrangement.Center,) {innerPadding()} },
     )
 }
