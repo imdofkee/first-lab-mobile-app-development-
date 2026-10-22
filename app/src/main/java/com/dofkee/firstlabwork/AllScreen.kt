@@ -38,7 +38,6 @@ import com.dofkee.firstlabwork.ui.theme.BaseDisableColor
 import com.dofkee.firstlabwork.ui.theme.BaseTextColor
 import com.dofkee.firstlabwork.ui.theme.MyBlue
 import com.dofkee.firstlabwork.ui.theme.MyOrange
-import com.dofkee.firstlabwork.ui.theme.MyPink
 import com.dofkee.firstlabwork.ui.theme.WhiteTextColor
 
 
@@ -68,12 +67,7 @@ fun AllScreen(modifier: Modifier) {
         BasicTextField(
             value = text,
             onValueChange = { newValue ->
-                // ToDO: прикрутить проверку на ввод цирф/фильтр ввода
-                // что такое it тоже доразобрать
                 text = newValue
-//                buttonTypes = ButtonType.Based
-//                var digits: List<Int> = newValue.mapNotNull {it.digitToIntOrNull()}
-//                var output: String = Calculator.getSet(digits)
             },
             modifier = modifier
                 .fillMaxWidth()
@@ -93,7 +87,6 @@ fun AllScreen(modifier: Modifier) {
 
         Button(
             onClick = {
-                ///
                 val digits: List<Int> = text.split(",").mapNotNull {it.trim().toIntOrNull()}
                 output = Calculator.getSet(digits).joinToString(", ")
                 buttonTypes = ButtonType.Done
@@ -111,9 +104,7 @@ fun AllScreen(modifier: Modifier) {
                 ButtonType.Based -> Text("Введите значения")
                 ButtonType.Done -> Text("Готово!")
             }
-//            Text(" Вывести результат ")
         }
-
 
         OutlinedTextField(
             value = output,
