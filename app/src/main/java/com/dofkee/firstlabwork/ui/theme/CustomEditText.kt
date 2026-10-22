@@ -2,6 +2,7 @@ package com.dofkee.firstlabwork.ui.theme
 
 //import android.widget.EditText
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -34,7 +35,7 @@ fun TemplateText(modifier: Modifier) {
             // ToDO: прикрутить проверку на ввод цирф/фильтр ввода
             // что такое it тоже доразобрать
             text = it},
-        modifier = modifier.fillMaxWidth().height(30.dp).background(BaseColor, shape = textShape),
+        modifier = modifier.fillMaxWidth().height(40.dp).background(BaseColor, shape = textShape).border(width = 3.dp, color = BaseTextColor, shape = textShape),
         enabled = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
 //        onKeyboardAction = KeyboardOptions {
