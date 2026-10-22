@@ -1,4 +1,4 @@
-package com.dofkee.firstlabwork
+package com.dofkee.firstlabwork.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
