@@ -7,10 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.dofkee.firstlabwork.screens.AllScreen
 import com.dofkee.firstlabwork.ui.theme.FirstLabWorkTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +17,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FirstLabWorkTheme {
+                //scaffold - отступы! (строительные леса) => оболочка
+                //innerpadding - внутренний отступ
+                //Modifier - Основной шаблон пустых стилей,
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    AllScreen(Modifier.padding(innerPadding))
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FirstLabWorkTheme {
-        Greeting("Android")
     }
 }
